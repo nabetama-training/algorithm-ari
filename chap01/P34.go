@@ -1,22 +1,17 @@
-package main
+package P34
 
-import (
-	"fmt"
-	"os"
-)
-
-type P34 struct {
+type Box struct {
 	Numbers []int
 	Want    int // この数に出来るか
 }
 
-func NewP34(numbers []int) *P34 {
-	return &P34{
+func NewP34(numbers []int) *Box {
+	return &Box{
 		Numbers: numbers,
 	}
 }
 
-func (p *P34) solve(idx, sum int) bool {
+func (p *Box) solve(idx, sum int) bool {
 	if idx == p.isLast() { // 最後までチェックした？
 		return p.Want == sum
 	}
@@ -29,7 +24,7 @@ func (p *P34) solve(idx, sum int) bool {
 	return false
 }
 
-func (p *P34) pickUpToBecome(want int) bool {
+func (p *Box) pickUpToBecome(want int) bool {
 	p.Want = want
 	if p.solve(0, 0) {
 		return true
@@ -37,16 +32,6 @@ func (p *P34) pickUpToBecome(want int) bool {
 	return false
 }
 
-func (p *P34) isLast() int {
+func (p *Box) isLast() int {
 	return len(p.Numbers)
-}
-
-func main() {
-	numbers := NewP34([]int{1, 2, 3, 7})
-	if numbers.pickUpToBecome(19) {
-		fmt.Println("dekiru!")
-		os.Exit(0)
-	}
-	fmt.Println("dekineee!")
-	os.Exit(1)
 }
