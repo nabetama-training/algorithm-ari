@@ -48,8 +48,8 @@ func TestP36(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result, err := LakeCount(test.input)
-		if err != nil {
+		result := LakeCount(test.input)
+		if result != test.want {
 			t.Fatalf("Should be %d, but %v", test.want, result)
 		}
 	}
