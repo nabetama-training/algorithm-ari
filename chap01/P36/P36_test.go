@@ -45,12 +45,6 @@ func TestP36(t *testing.T) {
 			},
 			want: 0,
 		},
-		{
-			input: [][]string{
-				{},
-			},
-			want: 0,
-		},
 	}
 
 	for _, test := range tests {
