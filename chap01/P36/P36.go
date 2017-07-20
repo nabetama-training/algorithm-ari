@@ -4,15 +4,14 @@ package P36
 import "fmt"
 
 var (
-	N      int
-	M      int
+	N int
+	M int
 )
 
 func debug_print(lake *[][]string) {
 	for _, line := range *lake {
 		fmt.Println(line)
 	}
-	fmt.Println("========================")
 }
 
 func recursiveGrassCount(i, j int, lake *[][]string) bool {
