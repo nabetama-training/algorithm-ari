@@ -2,18 +2,17 @@
 const ok = (cards, _sum) => cards.reduce((acum, card) => acum + card, 0) === _sum;
 
 const main = (cards, _sum) => {
-  for (const card1 of cards) {
-    for (const card2 of cards) {
-      for (const card3 of cards) {
-        for (const card4 of cards) {
+  let ans = false;
+  cards.map(card1 =>
+    cards.map(card2 =>
+      cards.map(card3 =>
+        /* eslint-disable-next-line */
+        cards.map(card4 => {
           if (ok([card1, card2, card3, card4], _sum)) {
-            return true;
+            ans = true;
           }
-        }
-      }
-    }
-  }
-  return false;
+        }))));
+  return ans;
 };
 
 // n: 紙の枚数
