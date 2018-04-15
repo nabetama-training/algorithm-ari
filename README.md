@@ -1,1 +1,1 @@
-moved [operation urd](https://github.com/op-urd/algorithm_ant)
+[プログラミングコンテストチャレンジブック](https://amzn.to/2qxx3ia)
